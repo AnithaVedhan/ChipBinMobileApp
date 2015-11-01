@@ -1,0 +1,19 @@
+
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+  <!-- Dashboard Tab -->
+  <ion-tab title="Optimal route" icon-off="ion-ios-location-outline" icon-on="ion-ios-location" href="#/main/tab/dash">
+    <ion-nav-view name="tab-dash" ></ion-nav-view>
+  </ion-tab>
+
+    <!-- Account Tab -->
+  <ion-tab title="Bin Details" icon-off="ion-ios-trash-outline" icon-on="ion-ios-trash" class="{{displaytab()}}" ng-hide="true" >
+    <ion-nav-view name="tab-binDetails" ng-disable="true"></ion-nav-view> 
+  </ion-tab>
+    
+  <!-- Chats Tab -->
+  <ion-tab title="Analytics" icon-off="ion-ios-pie-outline" icon-on="ion-pie-graph" href="#/main/tab/analytics" class="  {{displaytab()}}" > 
+    <ion-nav-view name="tab-analytics"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

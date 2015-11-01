@@ -1,0 +1,69 @@
+<ion-view view-title="Export">
+<ion-content overflow-scroll = "true">
+   
+      <div fusioncharts
+                type="MSArea"
+               height="300"
+               width="300"
+                chart="{{attrs}}"
+                categories="{{categories}}"
+                dataset="{{dataset}}" ng-show="InAnalyticsTab  && ShowOther" class="text-center">
+      </div>
+    </div>
+     <div class="text-center" style="padding-top:2%">
+  <div fusioncharts
+                type="mscolumn3dlinedy"
+                height="300"
+                width="300"
+                chart="{{binAttrs}}"
+                categories="{{binCategories}}"
+                dataset="{{binDataset}}" ng-show="InBinDetailsTab" class="text-center">
+   </div>
+    </div>
+
+   <div fusioncharts 
+            type="mscolumn3dlinedy"
+            height="300"
+            width="300"
+            chart="{{attrsBinCust}}"
+            categories="{{categoriesBinCust}}"
+            dataset="{{dataBinCustSet}}" ng-show="InCustomDetailsTab" class="text-center">
+         </div>
+    
+ 
+         <div class="text-center" style="padding-top:2%">
+         <div fusioncharts
+           type="mscolumn2d"
+            height="300"
+            width="300"
+	       chart="{{emptyAttrs}}"
+	       categories="{{emptyCategories}}"
+	      dataset="{{emptyDataset}}"ng-show="InAnalyticsTab && ShowEmpty" class="text-center">
+          </div>
+          </div>
+       
+     <form ng-submit="sendFeedback(email)" novalidate>
+     <div class="list">
+    <label class="item item-input">
+    <span class="input-label">TO</span>
+    <input type='text' ng-model="email.ToMail"/>
+    </label>
+    <label class="item item-input">
+    <span class="input-label">Subject</span>
+    <input type='text' ng-model="email.Subject"/>
+    </label>
+    <label class="item item-input">
+    <span class="input-label">Body</span>
+    <input type='text' ng-model="email.Body"/>
+    </label>
+            
+    </div>
+     <div class="text-center">
+    <button class="ion-paper-airplane button button-positive" type="submit">Send</button>
+      </div>
+      </form>
+  
+   
+      
+</ion-content>
+</ion-view>

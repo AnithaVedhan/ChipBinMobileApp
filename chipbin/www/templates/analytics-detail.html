@@ -1,0 +1,61 @@
+
+<ion-view view-title="Analytics Details">
+<ion-content overflow-scroll = "true">
+<ul class="list">
+  <li class="item" ng-repeat="selectedbin in selectedBins" >
+      <label>
+           {{selectedbin.Name}}
+      </label>
+  </li>
+</ul>
+    <div class="text-center">
+    <b>From</b> {{ShowStartDate}}  <b>TO </b> {{ShowEndDate}}
+    </div>
+
+    <div ng-show="ShowEmpty">
+     <div ng-show="emptyDataset.length>0">
+         <div class="text-center" style="padding-top:2%">
+         <div fusioncharts
+           type="mscolumn2d"
+            height="300"
+            width="300"
+	       chart="{{emptyAttrs}}"
+	       categories="{{emptyCategories}}"
+	      dataset="{{emptyDataset}}">
+          </div>
+          </div>
+        </div>
+         <div ng-show="NoDataFlag">
+         <p><b>Empty Trend for the Selected Bin is not available for the duration Selected.</b></br>
+        </div>
+    </div>
+    <div ng-show="ShowOther">
+        <div ng-show="dataset.length>0">
+            <div ng-show="ShowMessage" class="text-center" style="padding-top:1%">
+           <span class="ion-ios-information-outline"/> Cummulative data divided by the number of days is the week is used as data point              to plot the graph.
+            </div>
+            <div class="text-center" style="padding-top:2%">
+         <div fusioncharts
+           type="MSArea"
+            height="300"
+            width="300"
+	     chart="{{attrs}}"
+	     categories="{{categories}}"
+	      dataset="{{dataset}}">
+          </div>
+          </div>
+        </div>
+  
+        <div ng-show="NoDataList.length>0">
+         <p><b>Following bins data is not available for the selected dates.</b></br>
+        <span ng-repeat="bin in NoDataList">
+            {{bin}} {{$last ? '' : ($index==shifts.length-2) ? ' and ' : ', '}}
+        </span></p> 
+            
+        </div>
+ 
+     </div>
+ </ion-content>
+</ion-view>
+
+

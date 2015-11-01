@@ -1,0 +1,34 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding"  scroll="false" >
+  
+      
+    <div id="floating-panel" class="input-group">
+       <labbel>Number Of Teams:  
+        <select id="mySelect">
+        <option>1</option>
+        <option>2</option>
+        </select> 
+        </labbel>
+        
+      </div>
+     <div id="floating-panel2" class="input-group">
+    <input id="pac-input"  class="search" type="text" placeholder="Search Box" style="left:0px">   
+    
+    <span class="input-group-addon" id="submit">
+        <i class="icon ion-search"></i>
+    </span>
+    <span class="input-group-add" id="clear" value="Clear Route">
+        <i class="ion-android-refresh"></i>
+    </span>
+  
+     <span class="input-group-add" id="calc" value="Find Route">
+        <i class="ion-android-bus"></i>
+    </span>
+    </div>
+
+    <div id="map" data-tap-disabled="true" style="height:560px;width=400px;max-width:inherit;"></div>                  
+    <div id="directions_panel" style="margin: 20px; background-color: #FFEE77;"></div>
+                        
+ 
+  </ion-content>
+</ion-view>

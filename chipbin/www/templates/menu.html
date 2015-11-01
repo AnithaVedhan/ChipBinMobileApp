@@ -1,0 +1,33 @@
+  
+<ion-side-menus>
+      <ion-side-menu-content ng-controller="MainCtrl" drag-content="false">
+        <ion-nav-bar class="bar-positive">
+          <ion-nav-back-button>
+          </ion-nav-back-button>
+          <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+            </button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menu-content" animation="slide-right-left"></ion-nav-view>
+      </ion-side-menu-content> 
+      <ion-side-menu side="right" >
+        <ion-header-bar class="bar bar-header" class="{{display()}}">
+        </ion-header-bar>
+        <ion-content has-header="true">
+          <ul class="list">
+            <li>
+              <a class="item" menu-close nav-clear href="#/main/tab/dash">DashBoard</a>
+            </li>
+            <li>
+              <a class="item" menu-close ng-click="ShowExport()">Export</a>
+            </li>
+             <li>
+              <a class="item" menu-close href="#/login">SignOut</a>
+            </li>
+          </ul>
+        </ion-content>
+      </ion-side-menu>
+    </ion-side-menus>      
+      
+      

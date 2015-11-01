@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jquery.jqplot.css" />
+    <link rel="stylesheet" type="text/css" hrf="css/jquery-ui.min.css" />
+    <link href="lib/ionic-datepicker/dist/style.css" rel="stylesheet"/>
+      <link href="css/social-icons.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+   
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script type="text/javascript" src="fusioncharts/angular-fusioncharts.min.js"></script>
+      
+   <script src="cordova.js"></script>
+       <!-- ng cordova js -->
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <script src="/plugins/emailComposer.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+   <script src="js/jquery.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+    
+<!-- path to ionic/angularjs js -->
+      <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+    <script src="lib/ionic-datepicker/dist/templates.js"></script>
+    <script src="lib/ionic-datepicker/dist/ionic-datepicker.js"></script>
+    <!-- your app's js -->
+     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places,geometry&language=kn"></script>  
+      
+    <script src="js/app.js"></script>
+    <script src="js/controllersModule.js"></script>
+    <script src="js/loginCtrl.js"></script>
+    <script src="js/dashBoardCtrl.js"></script>
+    <script src="js/mainCtrl.js"></script>
+    <script src="js/analyticsCtrl.js"></script>
+    <script src="js/analyticsDetailsCtrl.js"></script>
+    <script src="js/binDetailsCtrl.js"></script>
+    <script src="js/emailComposerCtrl.js"></script>
+    <script src="js/CustomDeatilsCtrl.js"></script>
+    <script src="js/services.js"></script>
+
+    <script>
+             function initMap() {  
+
+       var map = new google.maps.Map(document.getElementById('map'),
+                                     {
+            center: {lat: -12.9667, lng: 77.5667},    zoom: 12  })
+
+        var infoWindow = new google.maps.InfoWindow({map: map}); 
+        
+ 
+//marker.setMap(map);
+
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation)
+    {       navigator.geolocation.getCurrentPosition(function(position) 
+        { 
+        var pos = { lat: position.coords.latitude,lng: position.coords.longitude };
+         var marker=new google.maps.Marker({
+  position:pos,animation:google.maps.Animation.BOUNCE
+  });
+marker.setMap(map);
+
+        var pos1 = { lat: position.coords.latitude-100,lng: position.coords.longitude-100 };
+        // var marker1=new google.maps.Marker({
+  //position:pos1,animation:google.maps.Animation.BOUNCE
+ // });
+      //  marker1.setMap(map);
+         //infoWindow.setPosition(pos);
+         //infoWindow.setContent('Location found.');
+         map.setCenter(pos);
+    
+        }, 
+        function() {      
+        handleLocationError(true, infoWindow, map.getCenter());                           });  } 
+        else {    // Browser doesn't support Geolocation   
+            handleLocationError(false,infoWindow,map.getCenter());              }
+    }
+    
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {infoWindow.setPosition(pos);  infoWindow.setContent(browserHasGeolocation ?                        'Error: The Geolocation service failed.' :                        'Error: Your browser doesn\'t support geolocation.');}
+  </script>
+ 
+  </head>
+<body ng-app="starter">
+   
+        <div ng-controller="MainCtrl">
+        <ion-nav-view animation="slide-right-left"></ion-nav-view>
+        </div>
+      
+      
+</body>
+</html>

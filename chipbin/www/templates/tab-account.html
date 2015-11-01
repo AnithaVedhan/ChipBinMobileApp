@@ -1,0 +1,89 @@
+<ion-view view-title="Bin Details">
+  <ion-content>
+     
+   <div style="text-align:center">
+      <button type="button" class="button button-positive" name="Week" ng-click="week()" > Week </button>
+      <button type="button" class="button button-positive" ng-click="custom()"> Custom </button>
+  </div>
+    <div ng-show="ShowWeek">
+    <div style="text-align:center">
+           <div ng-repeat="selectedbin in SelectedBinDetails">
+        <label>{{selectedbin.Name}}</label>
+         <label>Current date Fill Trend {{selectedbin.FillTrend}} (%)</label>
+          </div>
+       
+      </div>
+   <div class="text-center" style="padding-top:2%">
+       
+    <div fusioncharts
+                type="mscolumn3dlinedy"
+           height="300"
+            width="300"
+                chart="{{binAttrs}}"
+                categories="{{binCategories}}"
+                dataset="{{binDataset}}">
+   </div>
+      </div>
+                     
+      <div ng-show="NoDataList.length>0">
+         <p><b>Following bins data is not available for the selected dates.</b></br>
+            <span ng-repeat="bin in NoDataList">
+            {{bin}} {{$last ? '' : ($index==shifts.length-2) ? ' and ' : ', '}}
+            </span>
+         </p>
+      </div>
+  </div>
+    <div ng-show="ShowCustom" ng-controller="CustomDetailCtrl">
+      <div style="text-align:center">
+         <label ng-repeat="selectedbin in SelectedBin">{{selectedbin.Name}} </label>
+      </div>
+       
+      <label class="item item-input">
+         <span class="input-label">From</span>
+         <ionic-datepicker date="fromDate" callback="datePickerFromCallback">
+            <button class="button button-block button-positive"> {{ fromDate | date:'MMMM/dd/yyyy' }} </button>
+         </ionic-datepicker>
+      </label>
+       
+      <label class="item item-input">
+         <span class="input-label">TO</span>
+         <ionic-datepicker date="toDate" callback="datePickerToCallback">
+            <button class="button button-block button-positive"> {{ toDate | date:'MMMM/dd/yyyy' }} </button>
+         </ionic-datepicker>
+      </label>
+       
+      <div class="text-center">
+         <button ng-click="getGraph()" class="button button-positive">Get Graph</button>
+      </div>
+       
+      <div ng-show="dataBinCustSet.length>0">
+         <div ng-show="ShowMessage" class="text-center" style="padding-top:1%">
+            <span class="ion-ios-information-outline"/> Cummulative data divided by the number of days is the week is used as data point to plot the graph.
+         </div>
+          <div class="text-center" style="padding-top:2%">
+         <div fusioncharts 
+            type="mscolumn3dlinedy"
+                height="300"
+            width="300"
+            chart="{{attrsBinCust}}"
+            categories="{{categoriesBinCust}}"
+            dataset="{{dataBinCustSet}}">
+         </div>
+          </div>
+      </div>
+       
+      <div ng-show="NoDataList.length>0">
+         <p><b>Following bins data is not available for the selected dates.</b></br>
+            <span ng-repeat="bin in NoDataList">
+            {{bin}} {{$last ? '' : ($index==shifts.length-2) ? ' and ' : ', '}}
+            </span>
+         </p>
+      </div>
+
+      </div>
+    
+
+      
+      </div>
+  </ion-content>
+</ion-view>

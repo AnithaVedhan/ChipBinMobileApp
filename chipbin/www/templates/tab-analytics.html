@@ -1,0 +1,61 @@
+<ion-view view-title="Analytics">
+  <ion-content overflow-scroll = "true">
+         <input type="search" placeholder="Search" ng-change="getLocation(LocationSearchText)" ng-model="LocationSearchText" id="Search">
+     <div class="list" ng-show="ShowSearch">
+         <ul>
+        <li class="animate-repeat item" ng-repeat="location in QueryLocation | filter:LocationSearchText as results"
+            ng-click="selectedLocation(location,LocationSearchText)">{{location.Name}}
+            <div style="font-size:70%">Address: {{location.BinAddress}}</div></li>
+           <li class="animate-repeat item" ng-show="results.length==0 && LocationSearchText.length > 3">No Records Found!</li>
+             </ul>
+      </div>
+
+      
+ <ul class="list" ng-show="ShowDefaultLocation">
+  <li class="item item-checkbox" ng-repeat="chat in chats" >
+     <label class="checkbox">
+       <input type="checkbox" ng-model="chat.selected">
+     </label>
+     {{chat.Name}}
+  </li>
+</ul>
+      
+<ul class="list" ng-show="ShowSelectedLocation" >
+  <li class="item item-checkbox" ng-repeat="bins in selectedBins" >
+     <label class="checkbox">
+       <input type="checkbox" ng-model="bins.selected">
+     </label>
+     {{bins.Name}}
+  </li>
+</ul>
+      
+      
+         
+    <label class="item item-input">
+  <span class="input-label">From</span>
+     <ionic-datepicker date="fromDate" callback="datePickerFromCallback">
+    <button class="button button-block button-positive"> {{ fromDate | date:'MMMM/dd/yyyy' }} </button>
+   </ionic-datepicker>
+</label>
+    
+     <label class="item item-input">
+  <span class="input-label">TO</span>
+  <ionic-datepicker date="toDate" callback="datePickerToCallback">
+    <button class="button button-block button-positive"> {{ toDate | date:'MMMM/dd/yyyy' }} </button>
+   </ionic-datepicker>
+</label>
+      
+<div class="list">
+  <label class="item item-radio" ng-repeat="option in filterOption">
+    <input type="radio" name="group" ng-click="doSomething(option.option)">
+    <div class="item-content" >
+      {{option.option}}
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+      </input>
+  </label>
+</div>
+  </ion-content>
+</ion-view>
+
+

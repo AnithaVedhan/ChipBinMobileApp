@@ -1,0 +1,81 @@
+{
+  "name": "datepicker-for-ionic",
+  "version": "1.1.2",
+  "description": "A date picker for ionic framework",
+  "main": "",
+  "scripts": {
+    "test": "karma start --single-run"
+  },
+  "author": {
+    "name": "Celso Marques",
+    "email": "celso.marques82@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celsomarques/ionic-datepicker.git"
+  },
+  "keywords": [
+    "ionic-datepicker",
+    "ionic",
+    "ionic datepicker",
+    "datepicker",
+    "datepicker ionic",
+    "datepicker for ionic",
+    "datepicker for ionic framework"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-istanbul": "^0.10.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-minify-html": "^1.0.3",
+    "gulp-ng-html2js": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "istanbul": "^0.3.17",
+    "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.2",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-coverage": "^0.4.2",
+    "karma-mocha": "^0.2.0",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
+    "karma-sinon-chai": "^1.0.0",
+    "mocha": "^2.2.5",
+    "ng-html2js": "^2.0.0",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0"
+  },
+  "gitHead": "bf63d3b6c33e60469bae042a43ef35cf7811f71b",
+  "bugs": {
+    "url": "https://github.com/celsomarques/ionic-datepicker/issues"
+  },
+  "homepage": "https://github.com/celsomarques/ionic-datepicker#readme",
+  "_id": "datepicker-for-ionic@1.1.2",
+  "_shasum": "a737b6fe53021e45e112235d0cc5fc7e68544502",
+  "_from": "datepicker-for-ionic@*",
+  "_npmVersion": "2.13.0",
+  "_nodeVersion": "2.4.0",
+  "_npmUser": {
+    "name": "celsomarques",
+    "email": "celso.marques82@gmail.com"
+  },
+  "dist": {
+    "shasum": "a737b6fe53021e45e112235d0cc5fc7e68544502",
+    "tarball": "http://registry.npmjs.org/datepicker-for-ionic/-/datepicker-for-ionic-1.1.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "celsomarques",
+      "email": "celso.marques82@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/datepicker-for-ionic/-/datepicker-for-ionic-1.1.2.tgz"
+}
